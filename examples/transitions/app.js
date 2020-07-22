@@ -19,8 +19,8 @@ const Parent = {
     }
   },
   beforeRouteUpdate (to, from, next) {
-    const toDepth = to.path.split('/').length
-    const fromDepth = from.path.split('/').length
+    const toDepth = to.path.split('/')[1].length
+    const fromDepth = from.path.split('/')[1].length
     this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
     next()
   },
